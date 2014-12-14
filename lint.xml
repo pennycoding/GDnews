@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="NewApi">
+        <ignore path="src/com/gdnews/news/MainActivity.java" />
+        <ignore path="src/com/gdnews/ui/MyFragmentFour.java" />
+        <ignore path="src/com/gdnews/ui/MyFragmentOne.java" />
+        <ignore path="src/com/gdnews/ui/MyFragmentThree.java" />
+        <ignore path="src/com/gdnews/ui/MyFragmentTwo.java" />
+        <ignore path="src/com/gdnews/ui/news_webView.java" />
+    </issue>
+</lint>
