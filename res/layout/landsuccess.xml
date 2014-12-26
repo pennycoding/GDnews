@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/style_land"
+    android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/titlereturn"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_revert" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:padding="1dp"
+        android:background="@drawable/land_rl_style"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136dp" >
+
+        <ImageView
+            android:id="@+id/my_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/Cancellation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:text="退出登陆" />
+
+</RelativeLayout>

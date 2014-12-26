@@ -1,22 +1,9 @@
 package com.gdnews.ui;
 
-import java.util.ArrayList;
-
-import com.gdnews.news.R;
-
 import android.app.Fragment;
-import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 
-public class MyFragmentFour extends Fragment {
+public class MyFragmentFour extends Fragment {/*
 
 	//ÈÝÆ÷Àà¿Ø¼þ
 	private ViewPager viewPager;
@@ -103,7 +90,7 @@ public class MyFragmentFour extends Fragment {
             		  democommentdata.list,
             		  R.layout.comment_item_layout,
             		  new String[]{"friendName","comment","staus","timestamp"},
-            		  new int[]{R.id.tv_fiendname,R.id.tv_friendcomment,R.id.tv_commentstatus,R.id.tv_comment_time}
+            		  new int[]{R.id.tv_fiendname,R.id.tv_friendcomment,R.id.tv_comment_time}
            		  
             		  );
               
@@ -119,4 +106,4 @@ public class MyFragmentFour extends Fragment {
 		
 	}
 	
-}
+*/}

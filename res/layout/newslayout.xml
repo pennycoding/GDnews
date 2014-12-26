@@ -21,16 +21,32 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
                 android:gravity="center" >
 
                 <TextView
                     android:id="@+id/tv_style_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:text="TextView"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_style_summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:text="TextView"
+                    android:textSize="10dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -38,45 +54,29 @@
                 android:layout_height="wrap_content"
                 android:gravity="right" >
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="right" >
-                    
-                    <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:src="@drawable/good" />
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/good" />
 
-                    <TextView
-                        android:id="@+id/tv_style_goods"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#FF0000"
-                        android:text="n" />
-                    
-                </LinearLayout>
-
-                <LinearLayout
+                <TextView
+                    android:id="@+id/tv_style_goods"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="right" >
+                    android:layout_height="wrap_content"
+                    android:text="n"
+                    android:textColor="#FF0000" />
 
-                    <ImageView
-                        android:layout_width="22dp"
-                        android:layout_height="22dp"
-                        android:src="@drawable/comment" />
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/comment" />
 
-                    <TextView
-                        android:id="@+id/tv_style_comment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="#FF0000"
-                        android:text="n" />
-
-                </LinearLayout>
-
+                <TextView
+                    android:id="@+id/tv_style_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="n"
+                    android:textColor="#FF0000" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

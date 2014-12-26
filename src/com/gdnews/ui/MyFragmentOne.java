@@ -22,31 +22,48 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterViewFlipper;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.gdnews.model.WebData;
 import com.gdnews.news.R;
+import com.gdnews.utils.RefreshableView;
+import com.gdnews.utils.RefreshableView.PullToRefreshListener;
 
 public class MyFragmentOne extends Fragment {
-
+	
 	ListView lv;
 
 	WebData webdata = null;
-
+	
+	RefreshableView refresh_hotnews;
+	
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+		
 
 		View myView = inflater.inflate(R.layout.fragment_layout_1, container,
 				false);
+		
+		
+		
 
 		lv = (ListView) myView.findViewById(R.id.lv);
+		
+		
+		refresh_hotnews =  (RefreshableView)myView.findViewById(R.id.refreshable_view);
 
-		new MyDownloadJSONTask().execute("http://192.168.153.35/getnews.php");
+		new MyDownloadJSONTask()
+				.execute("http://1.mygdmecapp.sinaapp.com/myapp_news.php");
+		
+		
+
+		
+		
 
 		lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -56,22 +73,35 @@ public class MyFragmentOne extends Fragment {
 				// TODO Auto-generated method stub
 
 				if (webdata != null) {
-					String news_URL = webdata.list.get(position).url;
+					String news_URL = webdata.list.get(position).news_url;
 
 					Intent intent = new Intent();
-					
-					intent.setClass(getActivity(),MyFragmentFour.class);
 
+					intent.setClass(getActivity(), news_webView.class);
+
+					String setid = String.valueOf(position+1);
+					
 					intent.putExtra("newsURL", news_URL);
+					intent.putExtra("newsid", setid);
 
 					startActivity(intent);
+					getActivity().finish();
 				}
 
 			}
 		});
+		
+		
+		
+		
+		myRefresh();
 
 		return myView;
 	}
+	
+	
+	
+	
 
 	public class MyDownloadJSONTask extends AsyncTask<String, String, String> {
 
@@ -88,8 +118,6 @@ public class MyFragmentOne extends Fragment {
 			super.onPostExecute(result);
 
 			DisplayJSON(result);
-
-			// et_json.setText(result);
 
 		}
 
@@ -127,8 +155,6 @@ public class MyFragmentOne extends Fragment {
 	// JSON解释
 	public void DisplayJSON(String jsonString) {
 		try {
-
-			StringBuilder sb = new StringBuilder();
 
 			JSONArray array = new JSONArray(jsonString);
 
@@ -179,6 +205,9 @@ public class MyFragmentOne extends Fragment {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO Auto-generated method stub
+			
+			
+			
 
 			LayoutInflater inflater = getActivity().getLayoutInflater();
 
@@ -188,18 +217,23 @@ public class MyFragmentOne extends Fragment {
 			// 把web上的标题放入newlayout中的title中
 			TextView tv_title = (TextView) temp
 					.findViewById(R.id.tv_style_title);
-			tv_title.setText(webdata.list.get(position).title);
+			tv_title.setText(webdata.list.get(position).news_title);
+			// 把web上的概要放入newlayout中的summary中
+			TextView tv_summary = (TextView) temp
+					.findViewById(R.id.tv_style_summary);
+			tv_summary.setText(webdata.list.get(position).news_summary);
 			// 把web上的赞放入newlayout中的comment中
 			TextView tv_goods = (TextView) temp
 					.findViewById(R.id.tv_style_goods);
-			tv_goods.setText("" + webdata.list.get(position).catid);
+			tv_goods.setText("" + webdata.list.get(position).news_time);
 			// 把web上的评论放入newlayout中的comment中
 			TextView tv_comment = (TextView) temp
 					.findViewById(R.id.tv_style_comment);
-			tv_comment.setText("" + webdata.list.get(position).catid);
+			tv_comment.setText("" + webdata.list.get(position).news_comment);
 			// 把web上的图片放入newlayout中的image中
 			ImageView iv = (ImageView) temp.findViewById(R.id.iv_style_image);
-			new MyDownloadTask(iv).execute(webdata.list.get(position).thumb);
+			new MyDownloadTask(iv)
+					.execute(webdata.list.get(position).news_images);
 
 			return temp;
 		}
@@ -275,6 +309,9 @@ public class MyFragmentOne extends Fragment {
 		@Override
 		protected String doInBackground(String... arg0) {
 			// TODO Auto-generated method stub
+			
+			
+			
 
 			bmp = downloadImage(arg0[0]);
 
@@ -284,6 +321,27 @@ public class MyFragmentOne extends Fragment {
 				return "FAIL";
 		}
 
+	}
+	
+	
+	
+	public void myRefresh(){
+		refresh_hotnews.setOnRefreshListener(new PullToRefreshListener(){
+			public void onRefresh() {
+				try {
+					
+					Thread.sleep(1000);
+					
+					
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				refresh_hotnews.finishRefreshing();
+			}
+		}, 0);
+		
+		
+		
 	}
 
 }

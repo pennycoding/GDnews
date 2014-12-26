@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="394dp"
+        android:layout_height="452dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="1.88"
+        android:src="@drawable/issue_confession_bg" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/imageButton1"
+        android:layout_toRightOf="@+id/textView1"
+        android:background="@drawable/confession_item_style"
+        android:ems="10"
+        android:hint=" 请输入他/她的昵称"
+        android:textColorHint="#E6E6E6"
+        android:textSize="12sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/imageButton1"
+        android:layout_toRightOf="@+id/textView2"
+        android:background="@drawable/confession_item_style"
+        android:ems="10"
+        android:hint=" 请输入你的深情告白"
+        android:textColorHint="#E6E6E6"
+        android:textSize="12sp" >
+
+        <requestFocus />
+    </EditText>
+    
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_marginLeft="16dp"
+        android:layout_toLeftOf="@+id/imageButton1"
+        android:layout_toRightOf="@+id/textView3"
+        android:background="@drawable/confession_item_style"
+        android:ems="10"
+        android:hint=" 请输入你的昵称or匿名"
+        android:textColorHint="#E6E6E6"
+        android:textSize="12sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="135dp"
+        android:textColor="#01A8E9"
+        android:text="        To:" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_marginTop="70dp"
+        android:layout_toLeftOf="@+id/editText1"
+        android:textColor="#01A8E9"
+        android:text="Content:" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="70dp"
+        android:layout_toLeftOf="@+id/editText2"
+        android:textColor="#01A8E9"
+        android:text="From:" />
+    
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/editText3"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/issuebutton" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView2"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="24dp"
+        android:text="发布" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/editText3"
+        android:layout_alignTop="@+id/imageView2"
+        android:src="@drawable/issueout" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_marginRight="17dp"
+        android:text="退出" />
+
+</RelativeLayout>

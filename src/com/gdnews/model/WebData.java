@@ -20,13 +20,12 @@ public class WebData {
 
 				object = array.getJSONObject(i);
 
-				NewsItem item = new NewsItem(object.getString("title"),
-						object.getString("desc"),
-						object.getInt("catid"),
-						object.getString("thumb"),
-						object.getString("url"),
-						object.getString("username"),
-						object.getInt("inputtime"));
+				NewsItem item = new NewsItem(object.getString("news_title"),
+						object.getString("news_summary"),
+						object.getInt("news_time"),
+						object.getInt("news_comment"),
+						object.getString("news_images"),
+						object.getString("news_url"));
 
 				list.add(item);
 

@@ -9,8 +9,8 @@
     <RelativeLayout  
 	        android:id="@+id/top_relative"  
 	        android:layout_width="fill_parent"  
-	        android:background="#106184"  
-	        android:layout_height="50.0dip" >  
+	        android:background="@drawable/bule"  
+	        android:layout_height="38dp" >  
 	     
 	        <TextView  
 	            android:id="@+id/titleText"  
@@ -24,10 +24,10 @@
 
 	        <ImageView
 	            android:id="@+id/iv_land"
-	            android:layout_width="40dp"
-	            android:layout_height="wrap_content"
+	            android:layout_width="30dp"
+	            android:layout_height="30dp"
 	            android:layout_alignParentRight="true"
-	            android:layout_alignParentTop="true"
+	            android:layout_centerVertical="true"
 	            android:src="@drawable/land" />
   
 	    </RelativeLayout>  
@@ -43,8 +43,7 @@
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="#E0E0E0" >
+            android:layout_weight="1" >
         </FrameLayout>
     </LinearLayout>
 
@@ -73,26 +72,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ll_Website"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/style1_et_bg"
-            android:gravity="center"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:src="@drawable/ic_launcher" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="官网" />
-        </LinearLayout>
-
-        <LinearLayout
             android:id="@+id/ll_service"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -104,12 +83,12 @@
             <ImageView
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/love" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="服务" />
+                android:text="表白墙" />
         </LinearLayout>
 
         <LinearLayout

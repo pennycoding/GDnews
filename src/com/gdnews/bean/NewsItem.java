@@ -1,24 +1,22 @@
 package com.gdnews.bean;
 
 public class NewsItem {
-	public String title = "";
-	public String desc = "";
-	public int catid = 0;
-	public String thumb = "";
-	public String url = "";
-	public String username = "";
-	public int inputtime = 0;
+	public String news_title = "";
+	public String news_summary = "";
+	public int news_time = 0;
+	public int news_comment = 0;
+	public String news_images = "";
+	public String news_url = "";
 
-	public NewsItem(String title, String desc, int catid, String thumb,
-			String url,String username,int inputtime) {
+	public NewsItem(String news_title, String news_summary, int news_time,
+			int news_comment, String news_images, String news_url) {
 		super();
-		this.title = title;
-		this.desc = desc;
-		this.catid = catid;
-		this.thumb = thumb;
-		this.url = url;
-		this.username = username;
-		this.inputtime = inputtime;
+		this.news_title = news_title;
+		this.news_summary = news_summary;
+		this.news_time = news_time;
+		this.news_comment = news_comment;
+		this.news_images = news_images;
+		this.news_url = news_url;
 	}
 
 }

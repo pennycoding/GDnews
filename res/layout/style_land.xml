@@ -1,113 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/style_land"
-    android:gravity="center|top"
-    android:orientation="vertical" >
+    android:background="@drawable/style_land" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/titlereturn"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:orientation="vertical" >
+        android:src="@android:drawable/ic_menu_revert" />
 
-        <ImageView
-            android:id="@+id/iv_close"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:src="@drawable/close" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="15dp"
-        android:orientation="vertical" >
+        android:layout_below="@+id/titlereturn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="91dp"
+        android:text="欢迎登录"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ff333333" />
 
-        <TextView
-            android:id="@+id/textView1"
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="欢迎登录"
-            android:textColor="#ff333333"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </LinearLayout>
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:padding="2dp" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp" >
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="用户名："
+                android:textColor="#ff333333"
+                android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/textView2"
+            <EditText
+                android:id="@+id/et_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_weight="1"
+                android:background="@drawable/style_land_et"
+                android:ems="10"
+                android:hint="请输入学号" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="#ff333333"
-            android:text="用户名：" />
+            android:layout_alignRight="@+id/relativeLayout1"
+            android:layout_below="@+id/relativeLayout1"
+            android:layout_marginTop="24dp"
+            android:padding="2dp" >
 
-        <EditText
-            android:id="@+id/et_user"
-            android:background="@drawable/style_land_et"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="请输入学号"
-            android:ems="10" >
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/et_password"
+                android:layout_alignParentLeft="true"
+                android:text=" 密   码  ："
+                android:textColor="#ff333333"
+                android:textSize="20dp" />
 
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp" >
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" 密  码 ："
-            android:textColor="#ff333333"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/et_password"
-            android:background="@drawable/style_land_et"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="请输入密码"
-            android:inputType="textPassword" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"     
-        android:layout_marginBottom="15dp"
-        android:gravity="center" >
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_weight="1"
+                android:background="@drawable/style_land_et"
+                android:ems="10"
+                android:hint="请输入密码"
+                android:inputType="textPassword" />
+        </RelativeLayout>
 
         <Button
             android:id="@+id/btn_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/textView1"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_marginTop="33dp"
             android:text="确定登录" />
-
-    </LinearLayout>
-
-</LinearLayout>
+        
+</RelativeLayout>
